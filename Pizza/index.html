@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="modules.js"></script>
+    <script src="pizza-script.js"></script>
+</head>
+<body>
+<div id="main-wrapper" class="container">
+    <div id="up-segment">
+        <div class="left inner-segment">
+            <div class="pizza-box">
+                <div class="pizza-img-konst">
+                    <img id="main-img" src="img/Custom_Pizza_3.jpg"/>
+                </div>
+            </div>
+        </div>
+        <div class="right inner-segment">
+            <h2 class="title">Сделай сам</h2>
+            <div class="up-right-items">
+                <div class="pizza-txt"><p>Тесто: </p> <span id="pizza-type-txt">Американо</span></div>
+                <div id="americano" data-pizza-type="Американо" class="pizza-type">
+                </div>
+                <div id="italano" data-pizza-type="Итальяно" class="pizza-type"></div>
+            </div>
+            <div class="up-right-items">
+                <div class="pizza-txt"><p>Размер: </p> <span id="pizza-size-txt">30см</span></div>
+                <div id="large" data-coeff="1.2" data-pizza-size="35см" data-price="60" data-weight="630"
+                     class="pizza-size" data-height="65px"></div>
+                <div id="middle" data-coeff="1" data-pizza-size="30см" data-price="40" data-weight="470"
+                     class="pizza-size active-size" data-height="56px"></div>
+                <div id="small" data-coeff="0.8" data-pizza-size="25см" data-price="30" data-weight="340"
+                     class="pizza-size" data-height="47px"></div>
+            </div>
+            <div class="up-right-items">
+                <div class="pizza-txt"><p>Соус: </p> <span id="pizza-sauce-txt">Гарлик</span></div>
+                <div id="ranch" data-sauce-name="Гарлик" class="pizza-sauce"><img src="img/garlik.png" alt="garlik">
+                </div>
+                <div id="garlick" data-sauce-name="BBQ" class="pizza-sauce"><img src="img/bbq.png" alt="bbq"></div>
+            </div>
+        </div>
+    </div>
+    <div id="center-segment">
+        <div id="in-pizza" class="left inner-segment">
+            <div id="h4-in-pizza"><h4 class="title">Ваша пицца состоит из:</h4></div>
+            <div id="main-component">
+                <div id="main-component-img"><img src="img/red-sauce.png" alt="">
+                </div>
+                <div>
+                    <label>
+                        <select class="sauce-select">
+                            <option data-img="./img/red-sauce.png">Томатный (основа)</option>
+                            <option data-img="./img/red-sauce.png">Ранч (основа)</option>
+                            <option data-img="./img/white-sauce.jpg">Чесночный (основа)</option>
+                            <option data-img="./img/white-sauce.jpg">Сливочный соус Альфредо (основа)</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="right inner-segment">
+            <h5 class="title">Дополнительные начинки</h5>
+            <div class="tab-links">
+                <a data-href="#tab1" class="tab-links-item"></a>
+                <a data-href="#tab2" class="tab-links-item"></a>
+                <a data-href="#tab3" class="tab-links-item"></a>
+                <a data-href="#tab4" class="tab-links-item"></a>
+                <a data-href="#tab5" class="tab-links-item"></a>
+            </div>
+            <div class="out-pizza" id="tabs">
+                <div id="tab1" class="main-tab active-tab">
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="0" data-weight="30" data-price="13">
+
+                            <img src="img/kalmar.jpg" alt="">
+                            <div class="ingredient-name"><span>Кальмары</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"> </span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="1" data-weight="35" data-price="12">
+                            <img src="img/krivetka.jpg" alt="">
+                            <div class="ingredient-name"><span>Криветка</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="2" data-weight="60" data-price="30">
+                            <img src="img/midii.jpg" alt="">
+                            <div class="ingredient-name"><span>Мидии</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="3" data-weight="60" data-price="55">
+                            <img src="img/semga.jpg" alt="">
+                            <div class="ingredient-name"><span>Семга</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item no-img" data-pos="4" data-weight="30" data-price="12">
+                            <img src="img/krab.jpg" alt="">
+                            <div class="ingredient-name"><span>Крабовое мясо</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab2" class="main-tab">
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="5" data-weight="45" data-price="13">
+                            <img src="img/bekon.png" alt="">
+                            <div class="ingredient-name"><span>Бекон</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="6" data-weight="45" data-price="10">
+                            <img src="img/vetchina.jpg" alt="">
+                            <div class="ingredient-name"><span>Ветчина</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="7" data-weight="50" data-price="16">
+                            <img src="img/ital-kolbasa.png" alt="">
+                            <div class="ingredient-name"><span>Итальянские колбаски</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item no-img" data-pos="8" data-weight="45" data-price="8">
+                            <img src="img/ven-kolbasa.jpg" alt="">
+                            <div class="ingredient-name"><span>Венские колбаски</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="9" data-weight="45" data-price="12">
+                            <img src="img/bovar-kolbasa.jpg" alt="">
+                            <div class="ingredient-name"><span>Боварские колабски</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="10" data-weight="60" data-price="16">
+                            <img src="img/kopch-chiken.png" alt="">
+                            <div class="ingredient-name"><span>Копченая курица</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="11" data-weight="50" data-price="13">
+                            <img src="img/grill-chicken.png" alt="">
+                            <div class="ingredient-name"><span>Курица гриль</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="12" data-weight="45" data-price="20">
+                            <img src="img/salami.png" alt="">
+                            <div class="ingredient-name"><span>Салями паперони</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="13" data-weight="50" data-price="15">
+                            <img src="img/govyadina.png" alt="">
+                            <div class="ingredient-name"><span>Говядина</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="14" data-weight="50" data-price="12">
+                            <img src="img/frikadelki.jpg" alt="">
+                            <div class="ingredient-name"><span>Фрикадельки</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="15" data-weight="60" data-price="13">
+                            <img src="img/stripsi.png" alt="">
+                            <div class="ingredient-name"><span>Стрипсы</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab3" class="main-tab">
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="16" data-weight="10" data-price="4">
+                            <img src="img/kunshut.jpg" alt="">
+                            <div class="ingredient-name"><span>Кунжутный бортик</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item no-img" data-pos="17" data-weight="2" data-price="4">
+                            <img src="img/oregano.jpg" alt="">
+                            <div class="ingredient-name"><span>Орегано</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="18" data-weight="16" data-price="11">
+                            <img src="img/halapenio.jpg" alt="">
+                            <div class="ingredient-name"><span>Перчик Халапеньо</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="19" data-weight="5" data-price="4">
+                            <img src="img/petrushka.jpg" alt="">
+                            <div class="ingredient-name"><span>Петрушка</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="20" data-weight="30" data-price="8">
+                            <img src="img/ananas.jpg" alt="">
+                            <div class="ingredient-name"><span>Ананас</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="21" data-weight="30" data-price="6">
+                            <img src="img/kukuruza.jpg" alt="">
+                            <div class="ingredient-name"><span>Кукуруза</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="22" data-weight="25" data-price="3">
+                            <img src="img/luk.jpg" alt="">
+                            <div class="ingredient-name"><span>Лук</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="23" data-weight="25" data-price="9">
+                            <img src="img/maslini.jpg" alt="">
+                            <div class="ingredient-name"><span>Маслины</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="24" data-weight="35" data-price="5">
+                            <img src="img/ogur-marin.jpg" alt="">
+                            <div class="ingredient-name"><span>Огурец маринованный</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="25" data-weight="25" data-price="9">
+                            <img src="img/olivki.jpg" alt="">
+                            <div class="ingredient-name"><span>Оливки</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="26" data-weight="30" data-price="11">
+                            <img src="img/perec-bolgr.jpg" alt="">
+                            <div class="ingredient-name"><span>Перец болгарский</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="27" data-weight="70" data-price="9">
+                            <img src="img/pomidor.jpg" alt="">
+                            <div class="ingredient-name"><span>Помидор</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="28" data-weight="40" data-price="6">
+                            <img src="img/shampinioni.jpg" alt="">
+                            <div class="ingredient-name"><span>Шампиньоны</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="29" data-weight="40" data-price="12">
+                            <img src="img/opyata.png" alt="">
+                            <div class="ingredient-name"><span>Опята</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab4" class="main-tab">
+                    <div class="in-tab-div ">
+                    <div class="tab-item no-img" data-pos="30" data-weight="40" data-price="33">
+                        <img src="img/dor-blu.jpg" alt="">
+                        <div class="ingredient-name"><span>Дор Блю</span></div>
+                        <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                class="ingredient-price"></span></div>
+                    </div>
+                    </div>
+                        <div class="in-tab-div">
+                            <div class="tab-item no-img" data-pos="31" data-weight="30" data-price="14">
+                                <img src="img/parmezan.jpg" alt="">
+                                <div class="ingredient-name"><span>Пармезан</span></div>
+                                <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                        class="ingredient-price"></span></div>
+                            </div>
+                        </div>
+                        <div class="in-tab-div">
+                            <div class="tab-item no-img" data-pos="32" data-weight="40" data-price="13">
+                                <img src="img/feta.jpg" alt="">
+                                <div class="ingredient-name"><span>Фета</span></div>
+                                <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                        class="ingredient-price"></span></div>
+                            </div>
+                        </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item no-img" data-pos="33" data-weight="40" data-price="13">
+                            <img src="img/filadelfia.jpg" alt="">
+                            <div class="ingredient-name"><span>Филадельфия сыр</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item no-img" data-pos="34" data-weight="60" data-price="16">
+                            <img src="img/chedder.jpg" alt="">
+                            <div class="ingredient-name"><span>Чеддер</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab5" class="main-tab">
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="35" data-weight="40" data-price="10">
+                            <img src="img/ostro-sladki-sauce.png" alt="">
+                            <div class="ingredient-name"><span>Остро-сладкий</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="36" data-weight="30" data-price="10">
+                            <img src="img/bbq-sauce.png" alt="">
+                            <div class="ingredient-name"><span>Барбекью</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="37" data-weight="40" data-price="10">
+                            <img src="img/ranch-sauce.jpg" alt="">
+                            <div class="ingredient-name"><span>Ранч</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="38" data-weight="40" data-price="10">
+                            <img src="img/sacebeli-sauce.png" alt="">
+                            <div class="ingredient-name"><span>Сацебели</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+                    <div class="in-tab-div">
+                        <div class="tab-item" data-pos="39" data-weight="40" data-price="10">
+                            <img src="img/karri-sauce.png" alt="">
+                            <div class="ingredient-name"><span>Карри</span></div>
+                            <div class="ingredient-value"><span class="ingredient-weight"></span> <span
+                                    class="ingredient-price"></span></div>
+                        </div>
+                    </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+<div id="down-segment">
+    <div class=" right inner-segment">
+        <h2 class="title">Итого: </h2> <span id="sum_size"><span id="sum" data-value="40"> 40 грн </span> / <span
+            id="size" data-value="470">470 гр</span></span>
+        <button class="btn">Купить</button>
+    </div>
+</div>
+</div>
+<div id="message">
+<div class="message-block">
+<h2 class="title"> Максимальный размер пиццы 2 кг.</h2>
+    <button id="ok-btn" class="btn">Окей</button>
+</div>
+</div>
+</body>
+</html>

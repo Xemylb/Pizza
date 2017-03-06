@@ -1,0 +1,496 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, addres, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dd, dt, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/*общие настройки для шаблона и всех тэгов*/
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    line-height: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font: 14px/18px 'Times New Roman', Times, sans-serif; /* пиксели после дроби это расстояния между строками*/
+    background-color: #FFF;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.clearfix:before,
+.clearfix:after { /* с помощью данного класса, его свойств и псевдоэлементов :after, :before*/
+    content: " "; /*всем элементам с данным классом добавил пробел в начала и конце элемента*/
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.container {
+    padding: 20px;
+    width: 960px;
+    margin: 0 auto;
+}
+
+#center-segment {
+    border-top: solid 1px #929292;
+    overflow: hidden;
+}
+#center-segment >div{
+    min-height: 600px;
+}
+#up-segment {
+    border-bottom: 1px solid #929292;
+    width: 100%;
+    height: 450px;
+}
+
+#center-segment {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+}
+
+#down-segment {
+    border-top: 1px solid #929292;
+    display: block;
+}
+#down-segment>div{
+    height: 75px;
+}
+#center-segment > div.left {
+    border-right: 1px solid #929292;
+}
+
+.inner-segment {
+    display: table;
+    width: 50%;
+    height: 100%;
+}
+
+#up-segment:nth-child(1) {
+    padding-left: 49px;
+}
+
+.tab-links {
+    width: 80%;
+    margin: 0 auto;
+    height: 50px;
+    padding-top: 5px;
+}
+
+.tab-links a:first-child {
+    background: url("img/addit-types.png") no-repeat -100px;
+    background-position-y: -42px;
+
+}
+
+.tab-links a:nth-child(2) {
+    background: url("img/addit-types.png") no-repeat -51px;
+    background-position-y: -2px;
+
+}
+
+.tab-links a:nth-child(3) {
+    background: url("img/addit-types.png") no-repeat -249px;
+    background-position-y: -2px;
+
+}
+
+.tab-links a:nth-child(4) {
+    background: url("img/addit-types.png") no-repeat -199px;
+    background-position-y: -2px;
+
+}
+
+.tab-links a:nth-child(5) {
+    background: url("img/addit-types.png") no-repeat -347px;
+    background-position-y: -2px;
+
+}
+
+.active-tab-link {
+    background-position-y: -42px;
+}
+
+#tabs {
+    width: 100%;
+    padding: 20px 46px;
+}
+
+.tab-links-item {
+    display: inline-block;
+    float: left;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #929292;
+    border-radius: 50%;
+    margin-left: 28px;
+    cursor: pointer;
+}
+
+.tab-links-item:hover {
+    opacity: 0.8;
+}
+
+h2.title {
+    display: inline-block;
+    text-transform: uppercase;
+    font: bold 20px/20px arial, sans-serif; /* пиксели после дроби это расстояния между строками*/
+    color: #222222;
+}
+
+#up-segment h2.title {
+    margin: 38px 0 38px 24px;
+}
+
+h5.title {
+    display: inline-block;
+    margin-left: 48px;
+    text-transform: uppercase;
+    font: bold 14px/14px arial, sans-serif; /* пиксели после дроби это расстояния между строками*/
+    color: #222222;
+}
+
+.tab-item {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    float: left;
+    width: 90px;
+    height: 85px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.main-tab {
+    display: none;
+    height: 100%;
+}
+
+.active-tab {
+    display: block;
+}
+
+.tab-item img {
+    width: 55px;
+    height: 45px;
+}
+
+#center-segment .tab-item {
+    text-align: center;
+}
+
+#center-segment .tab-item span {
+    font-size: 11px;
+}
+
+.ingredient-price {
+    color: #cb0505;
+}
+
+.pizza-box {
+    width: 100%;
+    height: 100%;
+}
+
+.pizza-img-konst {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#main-img {
+    display: block;
+    position: static;
+    width: 410px;
+    height: 410px;
+}
+
+.pizza-img-konst img {
+    z-index: 1;
+    position: absolute;
+    width: 305px;
+    height: 305px;
+    top: 50px;
+    left: 55px;
+}
+
+.up-right-items {
+    padding-left: 23px;
+    height: 22%;
+    width: 100%;
+}
+
+.up-right-items p {
+    font: bold 17px/17px arial, sans-serif;
+}
+
+.pizza-type {
+    opacity: 0.7;
+    width: 80px;
+    height: 52px;
+    float: left;
+    display: inline-block;
+    margin-right: 20px;
+    border-radius: 2px;
+}
+
+.pizza-txt {
+    opacity: 1;
+    width: 80px;
+    height: 52px;
+    float: left;
+    display: inline-block;
+    margin-right: 20px;
+    border-radius: 2px;
+}
+
+#americano {
+    opacity: 1;
+    background: url("img/item-americano.png");
+}
+
+#italano {
+    background: url("img/item-italano.png");
+}
+
+#italano:hover, #americano:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.pizza-size {
+    vertical-align: middle;
+    width: 60px;
+    height: 65px;
+    float: left;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.pizza-size:first-child, .pizza-sauce:first-child {
+    margin-right: 40px;
+}
+
+.pizza-size:last-child {
+    margin-right: 0;
+}
+
+#large {
+    background: url("img/pizza-size-large.png") no-repeat;
+}
+
+#middle {
+    width: 55px;
+    height: 56px;
+    background: url("img/pizza-size-mid.png") no-repeat 50% 100%;
+}
+
+#small {
+    width: 44px;
+    height: 47px;
+    background: url("img/pizza-size-small.png") no-repeat 50% 0;
+}
+
+#small:hover, #middle:hover, #large:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.pizza-sauce {
+    float: left;
+    display: inline-block;
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.pizza-sauce img {
+    cursor: pointer;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+}
+
+#ranch img {
+    opacity: 1;
+}
+
+#main-component {
+    margin-top: 6px;
+    float: left;
+    width: 103px;
+    height: 68px;
+    display: inline-block;
+}
+
+#h4-in-pizza {
+    margin-bottom: 25px;
+}
+
+.sauce-select {
+    width: 100%;
+    font-size: 12px;
+}
+
+#main-component-img img {
+    width: 45px;
+    height: 45px;
+}
+
+#main-component-img {
+    padding-left: 30px;
+    margin-bottom: 8px;
+}
+
+h4.title {
+    display: inline-block;
+    text-transform: uppercase;
+    font: bold 14px/14px arial, sans-serif; /* пиксели после дроби это расстояния между строками*/
+    color: #222222;
+}
+
+#down-segment h2.title {
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.btn {
+    background: #f37125;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 20px;
+    margin-left: 60px;
+}
+
+#sum_size {
+    display: inline-block;
+    font: bold 17px/17px arial, sans-serif; /* пиксели после дроби это расстояния между строками*/
+    color: #222222;
+}
+
+#message{
+    display: none;
+    width: 500px;
+    height: 250px;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.message-block {
+    position: fixed;
+    width: 500px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -250px;
+    background-color: #929292;
+    border-radius: 4px;
+    opacity: 0.9;
+    z-index: 999;
+}
+.message-block h2.title{
+    margin-left: 40px;
+    margin-top: 60px;
+    opacity: 1;
+}
+.message-block .btn {
+    margin-top: 50px;
+    margin-left: 200px;
+
+}
+.message-block .btn:hover{
+    margin-top: 50px;
+    margin-left: 200px;
+    background: #f39518;
+}
+.plus{
+    border: #ff1e28 solid 1px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    float: left;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    right: 3px;
+    cursor: pointer;
+    z-index: 4;
+}
+.plus:before {
+    content: '+';
+    font-weight: 900;
+    margin: auto;
+    position: absolute;
+    top: -2.8px;
+    color: #ff1100;
+    left: 3px;
+    right: 3px;
+    bottom: 0;
+}
+#in-pizza .tab-item{
+    margin-left: 1px;
+    margin-bottom: 25px;
+}
+.val-count{
+    background: linear-gradient(#e7061b, #cb0517);
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+    color: #ede0d0;
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
